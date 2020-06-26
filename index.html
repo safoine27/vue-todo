@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do list</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script defer src="app.js"></script>
+</head>
+<body>
+    <main id="app" class="container mt-5">
+        <form @submit.prevent="addTodo" class=" form-group text-center" action="">
+            <input v-model="todo" type="text" class="form-control">
+            <button type="submit" class="mt-4 btn btn-primary">Ajouter</button>
+        </form>
+        <div class="mt-5 text-justify">
+            <ul>
+                <li v-for="todo in toDoList" :class="{done: todo.done}">{{ todo.texte }} 
+                    <button class="btn" @click="markAsDone(todo)">✅</button>
+                    <button class="btn" @click="deleteItem(todo)">❌</button>
+                </li>
+            </ul>
+        </div>
+    </main>
+</body>
+</html>
