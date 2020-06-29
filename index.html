@@ -12,8 +12,10 @@
 <body>
     <main id="app" class="container mt-5">
         <form @submit.prevent="addTodo" class=" form-group text-center" action="">
-            <input v-model="todo" type="text" class="form-control">
+            <input v-model="todo" type="text" class="form-control" required>
+            <button type="button" @click="markallasdone" v-if="toDoList.length >0" id="maad" class="mt-4 btn btn-success">Mark all as done</button>
             <button type="submit" class="mt-4 btn btn-primary">Ajouter</button>
+            <button type="button" @click="toDoList = []" v-if="toDoList.length >0" id="da" class="mt-4 btn btn-danger">Delete all</button>
         </form>
         <div class="mt-5 text-justify">
             <ul>

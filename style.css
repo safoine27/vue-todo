@@ -1,3 +1,9 @@
 .done{
     text-decoration: line-through;
 }
+#da {
+    float:left;
+}
+#maad {
+    float: right;
+}
